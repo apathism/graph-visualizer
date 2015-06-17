@@ -1,6 +1,7 @@
 #include "window.h"
+#include <QResizeEvent>
 
-MainWindow::MainWindow(QWidget *parent): QMainWindow(parent) {
+MainWindow::MainWindow(QWidget* parent): QMainWindow(parent) {
 	// Установим ширину по-умолчанию
 	resize(800, 640);
 	// Инициализация веб-браузера
