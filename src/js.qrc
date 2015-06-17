@@ -1,5 +1,7 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
     <file>js/main.html</file>
+    <file>js/utils.js</file>
+    <file>js/init.js</file>
 </qresource>
 </RCC>	
