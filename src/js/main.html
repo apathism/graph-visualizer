@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        <script src="https://yandex.st/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+        <style>
+            body {
+	        margin: 0px;
+                font-family: Arial;
+                font-size: 14px;
+            }
+	    #map {
+	        width: 800px;
+	        height: 640px;
+	    }
+        </style>
+        <script type="text/javascript">
+	    var myMap;
+
+	    ymaps.ready(function () {
+                var mapCenter = [30, 20],
+                    myMap = new ymaps.Map('map', {
+                        center: mapCenter,
+                        zoom: 2,
+                        controls: [ 'smallMapDefaultSet' ]
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+</html>
