@@ -14,4 +14,5 @@ MainWindow::MainWindow(QWidget* parent): QMainWindow(parent) {
 }
 
 MainWindow::~MainWindow() {
+	delete web;
 }
