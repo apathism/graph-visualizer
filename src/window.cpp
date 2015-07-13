@@ -16,3 +16,7 @@ MainWindow::MainWindow(QWidget* parent): QMainWindow(parent) {
 MainWindow::~MainWindow() {
 	delete web;
 }
+
+bool MainWindow::loadMapFromFile(const QString &filename) const {
+	return false; // Not Implemented
+}

@@ -12,6 +12,8 @@ public:
     ~MainWindow();
 private:
     QWebEngineView* web;
+
+    bool loadMapFromFile(const QString &file = "map.html") const;
 };
 
 #endif

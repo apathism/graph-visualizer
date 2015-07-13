@@ -6,5 +6,4 @@ ymaps.ready(function () {
         zoom: 2,
         controls: []
     });
-    myMap.container.fitToContainer(true);
 });

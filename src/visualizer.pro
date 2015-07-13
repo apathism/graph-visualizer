@@ -2,10 +2,12 @@ QT += core widgets webenginewidgets
 
 SOURCES = \
   main.cpp \
-  window.cpp
+  window.cpp \
+  graph.cpp
 
 HEADERS = \
-  window.h
+  window.h \
+  graph.h
 
 RESOURCES = \
   js.qrc
