@@ -1,4 +1,7 @@
 *.o
+*.gch
 **/Makefile
 **/visualizer
+**/qrc_*
 **/moc_*
+src/**/*.txt
