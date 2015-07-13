@@ -46,7 +46,9 @@ void MainWindow::clearMap() {
 
 void MainWindow::loadOriginal() {
 	clearMap();
-	// Not Implemented
+	Graph graph;
+	graph.load("map1.txt");
+	addGeoObject(graph);
 }
 
 void MainWindow::executeProgram() {

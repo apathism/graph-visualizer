@@ -76,6 +76,15 @@ bool Graph::addRoadByString(const QString &input) {
 	return true;
 }
 
+QString Graph::getDrawingJavaScript() const {
+	QString code;
+	for (int i = 0; i < cities.size(); ++i)
+		code += cities[i]->getDrawingJavaScript();
+	for (int i = 0; i < roads.size(); ++i)
+		code += roads[i]->getDrawingJavaScript();
+	return code;
+}
+
 Graph::City::City(const QString &name, double lon, double lat, const QColor &color) {
 	this->city_name = name;
 	this->lon = lon;

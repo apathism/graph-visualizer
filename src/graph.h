@@ -5,12 +5,13 @@
 #include <QColor>
 #include "geoobject.h"
 
-class Graph {
+class Graph: public GeoObject {
 public:
 	Graph();
 	~Graph();
 
 	bool load(const QString &file = "map.txt");
+	virtual QString getDrawingJavaScript() const;
 
 	class Road;
 	
