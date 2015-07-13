@@ -7,7 +7,8 @@ SOURCES = \
 
 HEADERS = \
   window.h \
-  graph.h
+  graph.h \
+  geoobject.h
 
 RESOURCES = \
   js.qrc

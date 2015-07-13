@@ -2,6 +2,10 @@
 #include <QFile>
 #include <QTextStream>
 
+inline QString d2s(double x) {
+	return QString::number(x, 'f', 10);
+}
+
 Graph::Graph() {
 }
 
@@ -82,6 +86,11 @@ Graph::City::City(const QString &name, double lon, double lat, const QColor &col
 Graph::City::~City() {
 }
 
+QString Graph::City::getDrawingJavaScript() const {
+	return QString("addVertex('%1', %2, %3, '%4');").arg(
+		city_name, d2s(lon), d2s(lat), color.name());
+}
+
 Graph::Road::Road(Graph::City* city_1, Graph::City* city_2, const QColor &color, const QString &label) {
 	this->city_1 = city_1;
 	this->city_2 = city_2;
@@ -92,4 +101,8 @@ Graph::Road::Road(Graph::City* city_1, Graph::City* city_2, const QColor &color,
 Graph::Road::~Road() {
 }
 
-
+QString Graph::Road::getDrawingJavaScript() const {
+	return QString("addEdge(%1, %2, %3, %4, '%5', '%6');").arg(
+		d2s(city_1->lon), d2s(city_1->lat), d2s(city_2->lon), d2s(city_2->lat),
+		color.name(), label);
+}

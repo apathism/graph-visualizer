@@ -3,6 +3,7 @@
 
 #include <QVector>
 #include <QColor>
+#include "geoobject.h"
 
 class Graph {
 public:
@@ -10,21 +11,28 @@ public:
 	~Graph();
 
 	bool load(const QString &file = "map.txt");
+
+	class Road;
 	
-	class City {
+	class City: public GeoObject {
 	public:
 		City(const QString &, double, double, const QColor &color);
-		~City();
+		virtual ~City();
+
+		virtual QString getDrawingJavaScript() const;
+		friend Road;
 	protected:
 		QString city_name;
 		double lon, lat;
 		QColor color;
 	};
 
-	class Road {
+	class Road: public GeoObject {
 	public:
 		Road(City*, City*, const QColor &, const QString &);
-		~Road();
+		virtual ~Road();
+
+		virtual QString getDrawingJavaScript() const;
 	protected:
 		City *city_1, *city_2;
 		QString label;
