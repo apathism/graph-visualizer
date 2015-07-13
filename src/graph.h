@@ -35,8 +35,8 @@ protected:
 	QVector<Road*> roads;
 
 private:
-	bool addVertexByString(const QString &);
-	bool addEdgeByString(const QString &);
+	bool addCityByString(const QString &);
+	bool addRoadByString(const QString &);
 };
 
 #endif
