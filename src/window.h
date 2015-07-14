@@ -7,6 +7,7 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include "geoobject.h"
+#include <QProcess>
 
 class MainWindow: public QMainWindow {
 	Q_OBJECT
@@ -22,13 +23,15 @@ private:
 	QPushButton *map_orig;
 	QPushButton *map_prog;
 	QWidget *central_widget;
-
+	QProcess *process;
 	void addGeoObject(const GeoObject &);
 
 private slots:
 	void clearMap();
+	void loadingError();
 	void loadOriginal();
 	void executeProgram();
+	void loadModified();
 };
 
 #endif
